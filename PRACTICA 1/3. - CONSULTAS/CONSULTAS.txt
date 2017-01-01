@@ -1,0 +1,121 @@
+---1.)
+
+SELECT 		DNI, nombre, apellidos, calle, número, piso, localidad, "código postal", teléfono, usuario, contraseña
+FROM 		Clientes
+ORDER BY 	apellidos
+
+
+---2.)
+
+SELECT 		restaurante, ('Lunes') AS Dia, (TO_CHAR(hora_apertura, 'HH24:MM')) AS Hora_apertura, (TO_CHAR(hora_cierre, 'HH24:MM')) AS Hora_Cierre
+FROM 		Restaurantes R, Horarios H
+WHERE 		R.código = H.restaurante
+AND      	"día semana" = 'L'
+UNION
+SELECT 		restaurante, 'Martes', TO_CHAR(hora_apertura, 'HH24:MM'), TO_CHAR(hora_cierre, 'HH24:MM')
+FROM 		Restaurantes R, Horarios H
+WHERE 		R.código = H.restaurante
+AND      	"día semana" = 'M'
+UNION
+SELECT 		restaurante, 'Miercoles', TO_CHAR(hora_apertura, 'HH24:MM'), TO_CHAR(hora_cierre, 'HH24:MM')
+FROM 		Restaurantes R, Horarios H
+WHERE 		R.código = H.restaurante
+AND      	"día semana" = 'X'
+UNION
+SELECT 		restaurante, 'Jueves', TO_CHAR(hora_apertura, 'HH24:MM'), TO_CHAR(hora_cierre, 'HH24:MM')
+FROM 		Restaurantes R, Horarios H
+WHERE 		R.código = H.restaurante
+AND       	"día semana" = 'J'
+UNION
+SELECT 		restaurante, 'Viernes', TO_CHAR(hora_apertura, 'HH24:MM'), TO_CHAR(hora_cierre, 'HH24:MM')
+FROM 		Restaurantes R, Horarios H
+WHERE 		R.código = H.restaurante
+AND       	"día semana" = 'V'
+UNION
+SELECT 		restaurante, 'Sabado', TO_CHAR(hora_apertura, 'HH24:MM'), TO_CHAR(hora_cierre, 'HH24:MM')
+FROM 		Restaurantes R, Horarios H
+WHERE 		R.código = H.restaurante
+AND      	"día semana" = 'S'
+UNION
+SELECT 		restaurante, 'Domingo', TO_CHAR(hora_apertura, 'HH24:MM'), TO_CHAR(hora_cierre, 'HH24:MM')
+FROM 		Restaurantes R, Horarios H
+WHERE 		R.código = H.restaurante
+AND      	"día semana" = 'D'
+
+
+---3.)
+
+SELECT		C.DNI, C.nombre, C.apellidos
+FROM 		Clientes C, Pedidos P, Contiene Co, Platos Pl
+WHERE		C.DNI = P.cliente
+AND		P.código = Co.pedido
+AND		Co.plato = Pl.nombre
+AND		Pl.categoría = 'picante'
+
+
+---4.)
+
+SELECT		C.DNI, C.nombre, C.apellidos
+FROM		Clientes C, Pedidos P, Contiene Co
+WHERE		C.DNI = P.cliente
+AND		P.código = Co.pedido
+GROUP BY	C.DNI, C.nombre, C.apellidos
+HAVING		COUNT (DISTINCT Co.Restaurante) >= 	(SELECT		COUNT (DISTINCT código)
+												 FROM		Restaurantes
+												);
+
+
+---5.)
+
+SELECT		C.DNI, C.nombre, C.apellidos
+FROM		Clientes C, Pedidos P
+WHERE		C.DNI = P.cliente
+AND		p.estado = 'RUTA'
+
+
+--6.)
+
+SELECT		P.código, P.cliente, P."importe total", P.estado, P.fecha_hora_pedido, P.fecha_hora_entrega
+FROM		Pedidos P
+WHERE		P."importe total"  = 	(SELECT	MAX("importe total")
+					 FROM	Pedidos p
+					);
+
+
+--7.)
+
+SELECT		c.DNI, c.nombre, c.apellidos, (AVG(p."importe total")) AS "valor medio"
+FROM		Clientes c, Pedidos p
+WHERE		c.DNI = p.cliente
+GROUP BY	c.DNI, c.nombre, c.apellidos
+
+
+--8.)
+
+SELECT		c.restaurante, r.nombre, (COUNT (DISTINCT c.plato)) AS numPlatos, (SUM(pl.precio)) AS precioAcum
+FROM		Restaurantes r, Platos pl, Pedidos p, Contiene c
+WHERE		r.código = pl.restaurante
+AND		r.código = c.restaurante
+AND		pl.nombre = c.plato
+AND		p.código = c.pedido
+AND		(p.estado = 'ENTREGADO' OR p.estado = 'REST')
+GROUP BY	c.restaurante, r.nombre
+
+
+--9.)
+
+SELECT		DISTINCT C.nombre, C.apellidos
+FROM		Clientes c, Pedidos p, Contiene co, Platos pl
+WHERE		c.DNI = p.cliente
+AND		p.código = co.pedido
+AND		co.plato = pl.nombre
+AND		pl.precio > 15
+
+
+--10.)
+
+SELECT		c.DNI, (COUNT (DISTINCT restaurante)) AS numRestaurantes
+FROM		Clientes c, "Areas Cobertura" a, Restaurantes r
+WHERE		c."código postal" = a."código postal"
+AND		a.restaurante = r.código
+GROUP BY	c.DNI

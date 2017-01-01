@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE contiene.txt
+INTO TABLE Contiene
+APPEND
+FIELDS TERMINATED BY ';'
+(restaurante, plato, pedido, "precio con comisión", unidades)

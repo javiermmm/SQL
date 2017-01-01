@@ -1,0 +1,48 @@
+
+--------------------------------------------------
+GRANT CREATE VIEW TO GESB03;
+--------------------------------------------------
+
+
+CREATE VIEW ALCANCE_CLIENTES (DNI, NOMBRE, APES, NUM_REST, EXCLUSIVO)
+AS 	SELECT DNI, nombre, apellidos, COUNT("Areas Cobertura"."código postal") AS NUM_REST, 
+		CASE COUNT("Areas Cobertura"."código postal")
+			WHEN 0 THEN '-'
+			WHEN 1 THEN 'SI'
+			ELSE 'NO'
+		END AS EXCLUSIVO
+	FROM Clientes LEFT OUTER JOIN "Areas Cobertura" 
+		ON Clientes."código postal" = "Areas Cobertura"."código postal" 
+	GROUP BY DNI, nombre, apellidos;
+
+
+
+SELECT * FROM ALCANCE_CLIENTES;
+
+
+
+
+--------------------------------------------------
+GRANT CREATE MATERIALIZED VIEW TO GESB03;
+--------------------------------------------------
+
+--------------------------------------------------
+GRANT ON COMMIT REFRESH TO GESB03;
+--------------------------------------------------
+
+CREATE MATERIALIZED VIEW ESTADISTICAS (RTE, N_PLATOS, N_CATEG, N_PED, TOT_PED, PROM_PED)
+AS SELECT	r.nombre, (COUNT(DISTINCT pl.nombre)) AS N_PLATOS,
+		(COUNT (DISTINCT pl.categoría)), (COUNT (DISTINCT c.pedido)),
+		SUM(p."importe total"), AVG(p."importe total")
+   FROM Restaurantes r, platos pl, contiene c, pedidos p
+   WHERE r.código = pl.restaurante
+   AND pl.nombre = c.plato
+   AND c.pedido = p.código
+   GROUP BY r.nombre;
+
+
+SELECT * FROM ESTADISTICAS;
+
+UPDATE Restaurantes r SET r.nombre = 'MUNDO PATATA' WHERE r.nombre = 'telericatorta';
+commit;
+SELECT * FROM ESTADISTICAS;

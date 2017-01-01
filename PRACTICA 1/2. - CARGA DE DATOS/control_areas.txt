@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE areas.txt
+INTO TABLE "Areas Cobertura"
+APPEND
+FIELDS TERMINATED BY ';'
+(restaurante, "código postal")

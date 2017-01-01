@@ -1,0 +1,21 @@
+DECLARE
+
+CURSOR ccomision IS  
+SELECT p.restaurante, p.nombre, p.precio, c."precio con comisión", c.unidades, r.comisión
+FROM Platos p, Contiene c, Restaurantes r
+WHERE c.plato=p.nombre
+AND r.código=p.restaurante;
+
+CURSOR cimporte IS
+SELECT p."importe total", sum( c."precio con comisión" * c.unidades ) AS importe, p.código 
+FROM contiene c, pedidos p
+WHERE c.pedido = p.código 
+GROUP BY p.código , p."importe total";
+
+BEGIN
+
+FOR c IN ccomision LOOP
+dbms_output.put_line (c.precio * (1 + c.comisión/100));
+END LOOP;
+
+END;

@@ -1,0 +1,4 @@
+1234;pizzahud;abascal 45;12345;2,0;
+2345;Templo hindú;carbón 22;12567;5,0;
+3456;burguer-burguer;diamante 12;28224;10,0;
+5678;telericatorta;cántaro 17;28225;7,5;

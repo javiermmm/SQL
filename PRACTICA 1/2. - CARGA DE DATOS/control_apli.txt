@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE aplicadosA.txt
+INTO TABLE AplicadoA
+APPEND
+FIELDS TERMINATED BY ';'
+(descuento, pedido)

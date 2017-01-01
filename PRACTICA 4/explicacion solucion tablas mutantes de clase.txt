@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------------------------
+--PIZARRA
+--------------------------------------------------------------------------------------------------
+/*
+BEFORE INSERT OR DELETE OR UPDATE OF "importe total" ON Pedidos
+.
+.
+.
+SELECT Contiene.restaurante INTO rest
+FROM Contiene								--ID del Restaurante del Pedido
+WHERE Contiene.Pedido = :NEW.código
+GROUP BY Contiene.Restaurante
+
+
+IF UPDATING THEN
+	.
+	.
+	.
+	IF...
+		UPDATE REGISTRO_VENTAS SET TOTAL_PEDIDOS = ...
+		WHERE COD_REST = rest;
+	ELSE
+		INSERT INTO REGISTRO_VENTAS VALUES (rest, :NEW."importe total", :NEW.fecha_........);
+	END IF;
+	
+--------------------------------------------------------------------------------------------------
+IF UPDATING THEN
+.
+.
+.
+	IF ...
+	UPDATE ....
+		WHERE COD_REST = :NEW.restaurante----pedidos
+	ELSE
+		INSERT .....
+			VALUES (:NEW.restaurante, :.........)

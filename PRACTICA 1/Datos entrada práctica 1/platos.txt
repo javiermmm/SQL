@@ -1,0 +1,10 @@
+1234;pizza arrabiata;17,50;pizza de carne y guindilla;picante;
+1234;pizza margarita;8,50;tomate y queso;pizza;
+1234;pizza vegetal;10,50;queso y verduras;pizza;
+2345;pollo tikka;16,50;pollo con especias;picante;
+2345;chana masala;12,00;garbanzos y arroz;vegetariano;
+3456;hot-burguer;6,00;hamburguesa con salsa picante;picante;
+3456;vege-burguer;7,20;hamburguesa vegetal;vegetariano;
+3456;crunch-burguer;15,50;hamburguesa con pan crujiente;carne;
+5678;torta de carne especial;12,10;torta de carne y queso brie;carne;
+5678;torta gallega;21,00;torta de pulpo;pescado;

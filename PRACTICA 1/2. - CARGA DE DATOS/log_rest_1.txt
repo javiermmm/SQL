@@ -1,0 +1,51 @@
+
+SQL*Loader: Release 10.2.0.1.0 - Production on Vie Mar 11 09:36:17 2011
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+Archivo de Control:   control_rest.txt
+Archivo de Datos:      restaurantes.txt
+  Archivo de Errores:     restaurantes.bad
+  Desechar Archivo:  ninguno especificado
+ 
+ (Permitir todos los registros desechados)
+
+Número a cargar: ALL
+Número a ignorar: 0
+Errores permitidos: 50
+Matriz de enlace:     64 filas, máximo de 256000 bytes
+Continuación:    ninguno especificado
+Ruta de acceso utilizada:      Convencional
+
+Tabla RESTAURANTES, cargada de cada registro lógico.
+Opción INSERT activa para esta tabla: APPEND
+
+   Nombre Columna               Posición   Long  Term Entorno Tipo de Dato
+------------------------------ ---------- ----- ---- ---- ---------------------
+CÓDIGO                              FIRST     *   ;       CHARACTER            
+NOMBRE                               NEXT     *   ;       CHARACTER            
+CALLE                                NEXT     *   ;       CHARACTER            
+"código postal"                      NEXT     *   ;       CHARACTER            
+COMISIÓN                             NEXT     *   ;       CHARACTER            
+
+
+Tabla RESTAURANTES:
+  4 Filas se ha cargado correctamente.
+  0 Filas no cargada debido a errores de datos.
+  0 Filas no cargada porque todas las cláusulas WHEN han fallado.
+  0 Filas no cargada porque todos los campos eran nulos.
+
+
+Espacio asignado a matriz de enlace:            82560 bytes (64 filas)
+Bytes de buffer de lectura: 1048576
+
+Total de registros lógicos ignorados:          0
+Total de registros lógicos leídos:           4
+Total de registros lógicos rechazados:         0
+Total de registros lógicos desechados:        0
+
+La ejecución empezó en Vie Mar 11 09:36:17 2011
+La ejecución terminó en Vie Mar 11 09:36:17 2011
+
+Tiempo transcurrido:     00:00:00.14
+Tiempo de CPU:         00:00:00.05

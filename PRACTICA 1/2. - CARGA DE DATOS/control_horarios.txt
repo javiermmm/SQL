@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE horarios.txt
+INTO TABLE Horarios
+APPEND
+FIELDS TERMINATED BY ';'
+(restaurante, "día semana", hora_apertura DATE 'HH24:MI:SS', hora_cierre DATE 'HH24:MI:SS')

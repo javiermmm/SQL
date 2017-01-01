@@ -1,0 +1,7 @@
+CREATE TABLE Registro_ventas
+( cod_rest Number(8) NOT NULL,
+  total_pedidos Integer,
+  fecha_ult_pedido DATE,
+  PRIMARY KEY (cod_rest),
+  FOREIGN KEY (cod_rest) REFERENCES Restaurantes(código) ON DELETE CASCADE,
+);

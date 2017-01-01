@@ -1,0 +1,123 @@
+--1.)
+
+DNI       NOMBRE               APELLIDOS            CALLE                    NÚMERO PISO  LOCALIDAD       códig TELÉFONO  USUARIO  CONTRASE
+--------- -------------------- -------------------- -------------------- ---------- ----- --------------- ----- --------- -------- --------
+98765432K Manuel               Fernández Gómez      Gran Vía                     16 2     Madrid          AAAAA 600606060 user1    pass1
+98765432W Clara                García Nuñez         Capitán Almanzor             84 5     Teruel          BBBBB 611616161 user2    pass2
+12345678M Francisco            García Siñeriz       Tembleque                    78 BJ-A  Madrid          12346 789345312 userEx   Nopass
+45678901Y María                Jorda Lorente        Leiva                         1 4-I   Móstoles        78945 666123456 mari     passwd
+12345678N Pedro                Pérez                Torralba                     29 4-B   Madrid          12345 12345612  pedro    Nopass
+12345679M Ágata                Valle Dorado         Gallur                       78 3-A   Leganés         28224 676856743 agata    agata
+
+6 filas seleccionadas.
+
+
+--2.)
+
+RESTAURANTE DIA       HORA_ HORA_
+----------- --------- ----- -----
+       1234 Jueves    12:03 23:03
+       1234 Miercoles 12:03 23:03
+       1234 Viernes   20:03 03:03
+       2345 Domingo   12:03 23:03
+       2345 Jueves    12:03 23:03
+       2345 Sabado    20:03 03:03
+       2345 Viernes   12:03 03:03
+       3456 Domingo   12:03 18:03
+       3456 Jueves    12:03 23:03
+       3456 Sabado    20:03 03:03
+       3456 Viernes   20:03 03:03
+       5678 Jueves    12:03 23:03
+       5678 Lunes     12:03 18:03
+       5678 Martes    12:03 18:03
+       5678 Miercoles 12:03 18:03
+       5678 Viernes   20:03 01:03
+    1234567 Domingo   09:03 22:03
+   12345678 Lunes     09:03 22:03
+
+18 filas seleccionadas.
+
+
+--3.)
+
+DNI       NOMBRE               APELLIDOS
+--------- -------------------- --------------------
+12345678N Pedro                Pérez
+12345678M Francisco            García Siñeriz
+45678901Y María                Jorda Lorente
+
+3 filas seleccionadas.
+
+
+--4.)
+
+ninguna fila seleccionada
+
+
+--5.)
+
+DNI       NOMBRE               APELLIDOS
+--------- -------------------- --------------------
+45678901Y María                Jorda Lorente
+
+1 fila seleccionada.
+
+
+--6.)
+
+    CÓDIGO CLIENTE   importe total ESTADO    FECHA_HO FECHA_HO RESTAURANTE precio con comisión
+---------- --------- ------------- --------- -------- -------- ----------- -------------------
+  12345678 98765432K     123456,78 RECHAZADO 11/11/11 12/12/11     1234567           123456,78
+
+1 fila seleccionada.
+
+
+--7.)
+
+DNI       NOMBRE               APELLIDOS            valor medio
+--------- -------------------- -------------------- -----------
+12345678M Francisco            García Siñeriz        23,0833333
+98765432W Clara                García Nuñez           122223,78
+12345678N Pedro                Pérez                 21,6666667
+12345679M Ágata                Valle Dorado                  30
+45678901Y María                Jorda Lorente                 20
+98765432K Manuel               Fernández Gómez        123456,78
+
+6 filas seleccionadas.
+
+
+--8.)
+
+RESTAURANTE NOMBRE                NUMPLATOS PRECIOACUM
+----------- -------------------- ---------- ----------
+       1234 pizzahud                      1       17,5
+       2345 Templo hindú                  2       28,5
+       3456 burguer-burguer               2       13,2
+       5678 telericatorta                 1         21
+
+4 filas seleccionadas.
+
+
+--9.)
+
+NOMBRE               APELLIDOS
+-------------------- --------------------
+Clara                García Nuñez
+Manuel               Fernández Gómez
+Pedro                Pérez
+Francisco            García Siñeriz
+Francisco            García Siñeriz
+Pedro                Pérez
+
+6 filas seleccionadas.
+
+
+--10.)
+
+DNI       NUMRESTAURANTES
+--------- ---------------
+12345678M               1
+12345678N               2
+12345679M               2
+
+3 filas seleccionadas.

@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE clientes.txt
+INTO TABLE Clientes
+APPEND
+FIELDS TERMINATED BY ';'
+(DNI, nombre, apellidos, calle, número, piso, localidad, "código postal", teléfono, usuario, contraseña "DEFAULT")

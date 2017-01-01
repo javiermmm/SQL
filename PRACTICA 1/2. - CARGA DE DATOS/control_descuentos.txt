@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE descuentos.txt
+INTO TABLE Descuentos
+APPEND
+FIELDS TERMINATED BY ';'
+(código, fecha_caducidad DATE 'DD/MM/YYYY', "porcentaje descuento")

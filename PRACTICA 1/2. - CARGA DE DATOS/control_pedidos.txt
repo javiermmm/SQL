@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE pedidos.txt
+INTO TABLE Pedidos
+APPEND
+FIELDS TERMINATED BY ';'
+(código "pedidos_seq.NEXTVAL", estado, fecha_hora_pedido DATE 'DD/MM/YYYY HH24:MI:SS', fecha_hora_entrega DATE 'DD/MM/YYYY HH24:MI:SS', "importe total", cliente)

@@ -1,0 +1,60 @@
+
+SQL*Loader: Release 10.2.0.1.0 - Production on Vie Mar 11 09:42:27 2011
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+Archivo de Control:   control_platos.txt
+Archivo de Datos:      platos.txt
+  Archivo de Errores:     platos.bad
+  Desechar Archivo:  ninguno especificado
+ 
+ (Permitir todos los registros desechados)
+
+Número a cargar: ALL
+Número a ignorar: 0
+Errores permitidos: 50
+Matriz de enlace:     64 filas, máximo de 256000 bytes
+Continuación:    ninguno especificado
+Ruta de acceso utilizada:      Convencional
+
+Tabla PLATOS, cargada de cada registro lógico.
+Opción INSERT activa para esta tabla: APPEND
+
+   Nombre Columna               Posición   Long  Term Entorno Tipo de Dato
+------------------------------ ---------- ----- ---- ---- ---------------------
+RESTAURANTE                         FIRST     *   ;       CHARACTER            
+NOMBRE                               NEXT     *   ;       CHARACTER            
+PRECIO                               NEXT     *   ;       CHARACTER            
+DESCRIPCIÓN                          NEXT     *   ;       CHARACTER            
+CATEGORÍA                            NEXT     *   ;       CHARACTER            
+
+Registro 5: Rechazado - Error en tabla PLATOS, columna CATEGORÍA.
+ORA-12899: el valor es demasiado grande para la columna "GESB03"."PLATOS"."CATEGORÍA" (real: 11, máximo: 10)
+
+Registro 7: Rechazado - Error en tabla PLATOS, columna CATEGORÍA.
+ORA-12899: el valor es demasiado grande para la columna "GESB03"."PLATOS"."CATEGORÍA" (real: 11, máximo: 10)
+
+Registro 9: Rechazado - Error en tabla PLATOS, columna NOMBRE.
+ORA-12899: el valor es demasiado grande para la columna "GESB03"."PLATOS"."NOMBRE" (real: 23, máximo: 20)
+
+
+Tabla PLATOS:
+  7 Filas se ha cargado correctamente.
+  3 Filas no cargada debido a errores de datos.
+  0 Filas no cargada porque todas las cláusulas WHEN han fallado.
+  0 Filas no cargada porque todos los campos eran nulos.
+
+
+Espacio asignado a matriz de enlace:            82560 bytes (64 filas)
+Bytes de buffer de lectura: 1048576
+
+Total de registros lógicos ignorados:          0
+Total de registros lógicos leídos:          10
+Total de registros lógicos rechazados:         3
+Total de registros lógicos desechados:        0
+
+La ejecución empezó en Vie Mar 11 09:42:27 2011
+La ejecución terminó en Vie Mar 11 09:42:27 2011
+
+Tiempo transcurrido:     00:00:00.09
+Tiempo de CPU:         00:00:00.03

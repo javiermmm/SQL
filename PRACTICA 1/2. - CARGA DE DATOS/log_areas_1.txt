@@ -1,0 +1,51 @@
+
+SQL*Loader: Release 10.2.0.1.0 - Production on Vie Mar 11 09:36:49 2011
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+Archivo de Control:   control_areas.txt
+Archivo de Datos:      areas.txt
+  Archivo de Errores:     areas.bad
+  Desechar Archivo:  ninguno especificado
+ 
+ (Permitir todos los registros desechados)
+
+Número a cargar: ALL
+Número a ignorar: 0
+Errores permitidos: 50
+Matriz de enlace:     64 filas, máximo de 256000 bytes
+Continuación:    ninguno especificado
+Ruta de acceso utilizada:      Convencional
+
+Tabla "Areas Cobertura", cargada de cada registro lógico.
+Opción INSERT activa para esta tabla: APPEND
+
+   Nombre Columna               Posición   Long  Term Entorno Tipo de Dato
+------------------------------ ---------- ----- ---- ---- ---------------------
+RESTAURANTE                         FIRST     *   ;       CHARACTER            
+"código postal"                      NEXT     *   ;       CHARACTER            
+
+Registro 6: Rechazado - Error en tabla "Areas Cobertura".
+ORA-02291: restricción de integridad (GESB03.SYS_C0025032) violada - clave principal no encontrada
+
+
+Tabla "Areas Cobertura":
+  5 Filas se ha cargado correctamente.
+  1 Fila no cargada debido a errores de datos.
+  0 Filas no cargada porque todas las cláusulas WHEN han fallado.
+  0 Filas no cargada porque todos los campos eran nulos.
+
+
+Espacio asignado a matriz de enlace:            33024 bytes (64 filas)
+Bytes de buffer de lectura: 1048576
+
+Total de registros lógicos ignorados:          0
+Total de registros lógicos leídos:           6
+Total de registros lógicos rechazados:         1
+Total de registros lógicos desechados:        0
+
+La ejecución empezó en Vie Mar 11 09:36:49 2011
+La ejecución terminó en Vie Mar 11 09:36:49 2011
+
+Tiempo transcurrido:     00:00:00.11
+Tiempo de CPU:         00:00:00.02

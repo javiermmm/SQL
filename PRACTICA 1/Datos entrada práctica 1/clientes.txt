@@ -1,0 +1,4 @@
+12345678N;Pedro;Pérez;Torralba;29;4-B;Madrid;12345;12345612;pedro;
+12345678M;Francisco;García Siñeriz;Tembleque;78;BJ-A;Madrid;12346;789345312;
+12345679M;Ágata;Valle Dorado;Gallur;78;3-A;Leganés;28224;676856743;agata;agata;
+45678901Y;María;Jorda Lorente;Leiva;1;4-I;Móstoles;78945;666123456;mari;passwd;

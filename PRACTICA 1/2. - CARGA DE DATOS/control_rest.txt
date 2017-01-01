@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE restaurantes.txt
+INTO TABLE Restaurantes
+APPEND
+FIELDS TERMINATED BY ';'
+(código, nombre, calle, "código postal", comisión)

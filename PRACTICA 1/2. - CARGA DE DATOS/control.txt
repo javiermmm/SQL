@@ -1,0 +1,62 @@
+LOAD DATA
+INFILE restaurantes.txt
+INTO TABLE Restaurantes
+APPEND
+FIELDS TERMINATED BY ';'
+(código, nombre, calle, "código postal", comisión)
+
+LOAD DATA
+INFILE areas.txt
+INTO TABLE "Areas Cobertura"
+APPEND
+FIELDS TERMINATED BY ';'
+(restaurante, "código postal")
+
+LOAD DATA
+INFILE horarios.txt
+INTO TABLE Horarios
+APPEND
+FIELDS TERMINATED BY ';'
+(restaurante, "dia semana", hora_apertura DATE 'HH24:MI:SS', hora_cierre DATE 'HH24:MI:SS')
+
+LOAD DATA
+INFILE platos.txt
+INTO TABLE Platos
+APPEND
+FIELDS TERMINATED BY ';'
+(restaurante, nombre, precio, descripción, categoría)
+
+LOAD DATA
+INFILE clientes.txt
+INTO TABLE Clientes
+APPEND
+FIELDS TERMINATED BY ';'
+(DNI, nombre, apellidos, calle, número, piso, localidad, "código postal", teléfono, usuario, contraseña)
+
+LOAD DATA
+INFILE pedidos.txt
+INTO TABLE Pedidos
+APPEND
+FIELDS TERMINATED BY ';'
+(pedidos_seq.NEXTVAL, estado, fecha_hora_pedido DATE 'DD/MM/YYYY HH24:MI:SS', fecha_hora_entrega DATE 'DD/MM/YYYY HH24:MI:SS', "importe total", cliente)
+
+LOAD DATA
+INFILE contiene.txt
+INTO TABLE Contiene
+APPEND
+FIELDS TERMINATED BY ';'
+(restaurante, plato, pedido, "precio con comisión", unidades)
+
+LOAD DATA
+INFILE descuentos.txt
+INTO TABLE Descuentos
+APPEND
+FIELDS TERMINATED BY ';'
+(código, fecha_caducidad DATE 'DD/MM/YYYY', "porcentaje descuento")
+
+LOAD DATA
+INFILE aplicadosA.txt
+INTO TABLE AplicadoA
+APPEND
+FIELDS TERMINATED BY ';'
+(descuento, pedido)

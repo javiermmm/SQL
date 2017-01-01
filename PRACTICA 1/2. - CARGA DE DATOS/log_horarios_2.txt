@@ -1,0 +1,95 @@
+
+SQL*Loader: Release 10.2.0.1.0 - Production on Vie Mar 11 09:41:09 2011
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+Archivo de Control:   control_horarios.txt
+Archivo de Datos:      horarios.txt
+  Archivo de Errores:     horarios.bad
+  Desechar Archivo:  ninguno especificado
+ 
+ (Permitir todos los registros desechados)
+
+Número a cargar: ALL
+Número a ignorar: 0
+Errores permitidos: 50
+Matriz de enlace:     64 filas, máximo de 256000 bytes
+Continuación:    ninguno especificado
+Ruta de acceso utilizada:      Convencional
+
+Tabla HORARIOS, cargada de cada registro lógico.
+Opción INSERT activa para esta tabla: APPEND
+
+   Nombre Columna               Posición   Long  Term Entorno Tipo de Dato
+------------------------------ ---------- ----- ---- ---- ---------------------
+RESTAURANTE                         FIRST     *   ;       CHARACTER            
+"día semana"                         NEXT     *   ;       CHARACTER            
+HORA_APERTURA                        NEXT     *   ;       DATE HH24:MI:SS      
+HORA_CIERRE                          NEXT     *   ;       DATE HH24:MI:SS      
+
+Registro 1: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 2: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 3: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 4: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 5: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 6: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 7: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 8: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 9: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 10: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 11: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 12: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 13: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 14: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+Registro 15: Rechazado - Error en tabla HORARIOS.
+ORA-00001: restricción única (GESB03.SYS_C0025035) violada
+
+
+Tabla HORARIOS:
+  1 Fila se ha cargado correctamente.
+  15 Filas no cargada debido a errores de datos.
+  0 Filas no cargada porque todas las cláusulas WHEN han fallado.
+  0 Filas no cargada porque todos los campos eran nulos.
+
+
+Espacio asignado a matriz de enlace:            66048 bytes (64 filas)
+Bytes de buffer de lectura: 1048576
+
+Total de registros lógicos ignorados:          0
+Total de registros lógicos leídos:          16
+Total de registros lógicos rechazados:        15
+Total de registros lógicos desechados:        0
+
+La ejecución empezó en Vie Mar 11 09:41:09 2011
+La ejecución terminó en Vie Mar 11 09:41:09 2011
+
+Tiempo transcurrido:     00:00:00.27
+Tiempo de CPU:         00:00:00.05

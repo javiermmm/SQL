@@ -1,0 +1,6 @@
+LOAD DATA
+INFILE platos.txt
+INTO TABLE Platos
+APPEND
+FIELDS TERMINATED BY ';'
+(restaurante, nombre, precio, descripción, categoría)
